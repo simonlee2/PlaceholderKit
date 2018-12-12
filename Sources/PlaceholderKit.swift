@@ -23,7 +23,7 @@ public struct PlaceholderFactory {
         switch settings.background {
         case .solidColor(let color):
             return Image.createPlaceholder(withColor: color, size: settings.size)
-        case .image(let image):
+        case .image:
             return nil
         }
     }
