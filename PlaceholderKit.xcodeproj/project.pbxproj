@@ -65,7 +65,7 @@
 		F444B66621C104460042E6F2 = {
 			isa = PBXGroup;
 			children = (
-				F444B69321C105EB0042E6F2 /* Source */,
+				F444B69321C105EB0042E6F2 /* Sources */,
 				F444B69721C106420042E6F2 /* Tests */,
 				F444B68B21C1046F0042E6F2 /* Supporting Files */,
 				F444B67121C104460042E6F2 /* Products */,
@@ -102,14 +102,14 @@
 			path = Configurations;
 			sourceTree = "<group>";
 		};
-		F444B69321C105EB0042E6F2 /* Source */ = {
+		F444B69321C105EB0042E6F2 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				F444B69A21C10B3C0042E6F2 /* PlaceholderKit.swift */,
 				F444B69C21C115C00042E6F2 /* UIImage+Placeholder.swift */,
 				F444B69E21C115C60042E6F2 /* NSImage+Placeholder.swift */,
 			);
-			path = Source;
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		F444B69721C106420042E6F2 /* Tests */ = {
