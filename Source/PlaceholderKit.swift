@@ -16,10 +16,6 @@ typealias Color = UIColor
 typealias Image = UIImage
 #endif
 
-public struct PlaceholderKit {
-
-}
-
 public struct PlaceholderFactory {
     let settings: PlaceholderSettings
 

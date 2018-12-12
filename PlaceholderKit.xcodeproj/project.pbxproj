@@ -15,6 +15,7 @@
 		F444B69B21C10B3C0042E6F2 /* PlaceholderKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F444B69A21C10B3C0042E6F2 /* PlaceholderKit.swift */; };
 		F444B69D21C115C00042E6F2 /* UIImage+Placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F444B69C21C115C00042E6F2 /* UIImage+Placeholder.swift */; };
 		F444B69F21C115C60042E6F2 /* NSImage+Placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F444B69E21C115C60042E6F2 /* NSImage+Placeholder.swift */; };
+		F444B6A121C15FF90042E6F2 /* PlaceholderFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F444B6A021C15FF90042E6F2 /* PlaceholderFactoryTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +40,7 @@
 		F444B69A21C10B3C0042E6F2 /* PlaceholderKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderKit.swift; sourceTree = "<group>"; };
 		F444B69C21C115C00042E6F2 /* UIImage+Placeholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Placeholder.swift"; sourceTree = "<group>"; };
 		F444B69E21C115C60042E6F2 /* NSImage+Placeholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSImage+Placeholder.swift"; sourceTree = "<group>"; };
+		F444B6A021C15FF90042E6F2 /* PlaceholderFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderFactoryTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 		F444B69721C106420042E6F2 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				F444B6A021C15FF90042E6F2 /* PlaceholderFactoryTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -183,6 +186,7 @@
 					};
 					F444B67821C104460042E6F2 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
@@ -239,6 +243,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F444B6A121C15FF90042E6F2 /* PlaceholderFactoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,6 +445,7 @@
 			baseConfigurationReference = F444B68E21C104900042E6F2 /* Universal-Target-Base.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = T3LQ95726F;
@@ -451,6 +457,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.shaopinglee.PlaceholderKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
@@ -460,6 +467,7 @@
 			baseConfigurationReference = F444B68E21C104900042E6F2 /* Universal-Target-Base.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = T3LQ95726F;
