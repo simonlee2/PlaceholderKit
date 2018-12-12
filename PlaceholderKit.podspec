@@ -10,9 +10,10 @@ Pod::Spec.new do |s|
       "Simon Lee" => "dev.simonlee@gmail.com"
     }
   
-    s.source = { :git => "https://github.com/simonlee2/PlaceholderKit.git", :tag => "0.0.1" }
+    s.source = { :git => "https://github.com/simonlee2/PlaceholderKit.git", :tag => s.version.to_s }
     s.source_files = "Sources"
+    s.exclude_files = "Sources/**/*.plist"
   
-    s.platforms = { :ios => "8.0", :osx => "10.11", :tvos => "9.0", :watchos => "3.0" }
+    s.platforms = { :ios => "8.0", :osx => "10.11"}
     s.swift_version = "4.2"
   end
