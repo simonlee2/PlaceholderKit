@@ -37,10 +37,10 @@
 		F444B68D21C104900042E6F2 /* Universal-Framework-Target.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Universal-Framework-Target.xcconfig"; sourceTree = "<group>"; };
 		F444B68E21C104900042E6F2 /* Universal-Target-Base.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Universal-Target-Base.xcconfig"; sourceTree = "<group>"; };
 		F444B68F21C104900042E6F2 /* Deployment-Targets.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Deployment-Targets.xcconfig"; sourceTree = "<group>"; };
-		F444B69A21C10B3C0042E6F2 /* PlaceholderKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderKit.swift; sourceTree = "<group>"; };
-		F444B69C21C115C00042E6F2 /* UIImage+Placeholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Placeholder.swift"; sourceTree = "<group>"; };
-		F444B69E21C115C60042E6F2 /* NSImage+Placeholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSImage+Placeholder.swift"; sourceTree = "<group>"; };
-		F444B6A021C15FF90042E6F2 /* PlaceholderFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderFactoryTests.swift; sourceTree = "<group>"; };
+		F444B69A21C10B3C0042E6F2 /* PlaceholderKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlaceholderKit.swift; path = PlaceholderKit/PlaceholderKit.swift; sourceTree = "<group>"; };
+		F444B69C21C115C00042E6F2 /* UIImage+Placeholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIImage+Placeholder.swift"; path = "PlaceholderKit/UIImage+Placeholder.swift"; sourceTree = "<group>"; };
+		F444B69E21C115C60042E6F2 /* NSImage+Placeholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "NSImage+Placeholder.swift"; path = "PlaceholderKit/NSImage+Placeholder.swift"; sourceTree = "<group>"; };
+		F444B6A021C15FF90042E6F2 /* PlaceholderFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlaceholderFactoryTests.swift; path = PlaceholderKitTests/PlaceholderFactoryTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
