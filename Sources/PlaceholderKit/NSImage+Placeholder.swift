@@ -10,7 +10,7 @@
 import AppKit
 
 extension NSImage {
-    static func createPlaceholder(withColor color: NSColor, size: CGSize) -> NSImage? {
+    static func image(withColor color: NSColor, size: CGSize) -> NSImage? {
         let image = NSImage(size: size)
         image.lockFocus()
         color.drawSwatch(in: NSMakeRect(0, 0, size.width, size.height))

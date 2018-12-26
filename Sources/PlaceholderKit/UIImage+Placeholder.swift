@@ -10,16 +10,14 @@
 import UIKit
 
 extension UIImage {
-    static func createPlaceholder(withColor color: UIColor, size: CGSize) -> UIImage? {
-        let rect = CGRect(origin: .zero, size: size)
-        UIGraphicsBeginImageContextWithOptions(rect.size, false, 1.0)
-        color.setFill()
-        UIRectFill(rect)
-        let image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
+    static func image(withColor color: UIColor, size: CGSize) -> UIImage? {
+        let renderer = UIGraphicsImageRenderer(size: size)
+        let image = renderer.image { context in
+            color.setFill()
+            context.fill(CGRect(origin: .zero, size: size))
+        }
 
-        guard let cgImage = image?.cgImage else { return nil }
-        return UIImage(cgImage: cgImage)
+        return image
     }
 }
 

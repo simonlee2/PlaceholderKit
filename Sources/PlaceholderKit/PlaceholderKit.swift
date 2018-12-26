@@ -16,21 +16,26 @@ public typealias Color = UIColor
 public typealias Image = UIImage
 #endif
 
-public struct PlaceholderFactory {
-    let settings: PlaceholderSettings
+public struct Placeholder {
+    let size: CGSize
+    let backgroundStyle: BackgroundStyle
 
-    public func createPlaceholder() -> Image? {
-        switch settings.background {
-        case .solidColor(let color):
-            return Image.createPlaceholder(withColor: color, size: settings.size)
-        case .image:
-            return nil
-        }
+    public init(size: CGSize, backgroundStyle: BackgroundStyle) {
+        self.size = size
+        self.backgroundStyle = backgroundStyle
+    }
+}
+
+public struct PlaceholderBuilder {
+    public func coloredBackground(color: UIColor, size: CGSize) -> Image? {
+        return Image.image(withColor: color, size: size)
     }
 
-    public init(settings: PlaceholderSettings) {
-        self.settings = settings
+    public func imageBackground(image: UIImage, size: CGSize, tiled: Bool = false) -> Image? {
+        return nil
     }
+
+    public init() {}
 }
 
 public struct PlaceholderSettings {

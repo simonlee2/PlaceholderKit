@@ -9,11 +9,10 @@
 /* Begin PBXBuildFile section */
 		F4EC51C421D33B6900DED569 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC51C321D33B6900DED569 /* AppDelegate.swift */; };
 		F4EC51C621D33B6900DED569 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC51C521D33B6900DED569 /* ViewController.swift */; };
-		F4EC51C921D33B6900DED569 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4EC51C721D33B6900DED569 /* Main.storyboard */; };
 		F4EC51CB21D33B6B00DED569 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4EC51CA21D33B6B00DED569 /* Assets.xcassets */; };
 		F4EC51CE21D33B6B00DED569 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4EC51CC21D33B6B00DED569 /* LaunchScreen.storyboard */; };
 		F4EC51D921D33B6B00DED569 /* ImagesExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC51D821D33B6B00DED569 /* ImagesExampleTests.swift */; };
-		F4EC51F021D33C1800DED569 /* PlaceholderKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4EC51E921D33B7D00DED569 /* PlaceholderKit.framework */; };
+		F4EC51F721D36DE100DED569 /* PlaceholderKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F4EC51E921D33B7D00DED569 /* PlaceholderKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,13 +37,33 @@
 			remoteGlobalIDString = F444B67921C104460042E6F2;
 			remoteInfo = PlaceholderKitTests;
 		};
+		F4EC51F821D36DE100DED569 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F4EC51E321D33B7D00DED569 /* PlaceholderKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F444B66F21C104460042E6F2;
+			remoteInfo = PlaceholderKit;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F4EC51FA21D36DE200DED569 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F4EC51F721D36DE100DED569 /* PlaceholderKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		F4EC51C021D33B6900DED569 /* ImagesExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImagesExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4EC51C321D33B6900DED569 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4EC51C521D33B6900DED569 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F4EC51C821D33B6900DED569 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F4EC51CA21D33B6B00DED569 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F4EC51CD21D33B6B00DED569 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F4EC51CF21D33B6B00DED569 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -59,7 +78,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4EC51F021D33C1800DED569 /* PlaceholderKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,7 +116,6 @@
 			children = (
 				F4EC51C321D33B6900DED569 /* AppDelegate.swift */,
 				F4EC51C521D33B6900DED569 /* ViewController.swift */,
-				F4EC51C721D33B6900DED569 /* Main.storyboard */,
 				F4EC51CA21D33B6B00DED569 /* Assets.xcassets */,
 				F4EC51CC21D33B6B00DED569 /* LaunchScreen.storyboard */,
 				F4EC51CF21D33B6B00DED569 /* Info.plist */,
@@ -141,10 +158,12 @@
 				F4EC51BC21D33B6900DED569 /* Sources */,
 				F4EC51BD21D33B6900DED569 /* Frameworks */,
 				F4EC51BE21D33B6900DED569 /* Resources */,
+				F4EC51FA21D36DE200DED569 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				F4EC51F921D36DE100DED569 /* PBXTargetDependency */,
 			);
 			name = ImagesExample;
 			productName = ImagesExample;
@@ -237,7 +256,6 @@
 			files = (
 				F4EC51CE21D33B6B00DED569 /* LaunchScreen.storyboard in Resources */,
 				F4EC51CB21D33B6B00DED569 /* Assets.xcassets in Resources */,
-				F4EC51C921D33B6900DED569 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,17 +294,14 @@
 			target = F4EC51BF21D33B6900DED569 /* ImagesExample */;
 			targetProxy = F4EC51D521D33B6B00DED569 /* PBXContainerItemProxy */;
 		};
+		F4EC51F921D36DE100DED569 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = PlaceholderKit;
+			targetProxy = F4EC51F821D36DE100DED569 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		F4EC51C721D33B6900DED569 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F4EC51C821D33B6900DED569 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F4EC51CC21D33B6B00DED569 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -417,6 +432,7 @@
 		F4EC51DE21D33B6B00DED569 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T3LQ95726F;
@@ -435,6 +451,7 @@
 		F4EC51DF21D33B6B00DED569 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T3LQ95726F;
