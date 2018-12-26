@@ -9,24 +9,16 @@
 import XCTest
 @testable import PlaceholderKit
 
-class PlaceholderFactoryTests: XCTestCase {
-    var factory: PlaceholderFactory?
-
+class PlaceholderTests: XCTestCase {
     func testSolidColor() {
         // Given a valid setting
         let outputSize = CGSize(width: 1600, height: 900)
-        let settings = PlaceholderSettings(size: outputSize,
-                                           background: .solidColor(Color(red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0)),
-                                           showDimensionAsText: true,
-                                           convertDimensionToAspectRatio: true)
-
-        factory = PlaceholderFactory(settings: settings)
-        let placeholder = factory?.createPlaceholder()
+        let image = PlaceholderBuilder().coloredBackground(color: .red, size: outputSize)
 
         // output should not be nil
-        XCTAssertNotNil(placeholder)
+        XCTAssertNotNil(image)
 
         // output should have the correct size
-        XCTAssert(placeholder!.size == outputSize, "Expected output to have size: \(outputSize), got \(placeholder!.size)")
+        XCTAssert(image!.size == outputSize, "Expected output to have size: \(outputSize), got \(image!.size)")
     }
 }

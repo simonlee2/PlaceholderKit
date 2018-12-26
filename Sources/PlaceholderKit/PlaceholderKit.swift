@@ -27,11 +27,11 @@ public struct Placeholder {
 }
 
 public struct PlaceholderBuilder {
-    public func coloredBackground(color: UIColor, size: CGSize) -> Image? {
+    public func coloredBackground(color: Color, size: CGSize) -> Image? {
         return Image.image(withColor: color, size: size)
     }
 
-    public func imageBackground(image: UIImage, size: CGSize, tiled: Bool = false) -> Image? {
+    public func imageBackground(image: Image, size: CGSize, tiled: Bool = false) -> Image? {
         return nil
     }
 
