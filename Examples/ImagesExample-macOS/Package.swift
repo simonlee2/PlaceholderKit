@@ -12,7 +12,7 @@ let package = Package(
             targets: ["ImagesExample-macOS"]),
     ],
     dependencies: [
-        .package(url: "../../PlaceholderKit", from: "0.0.3")
+        .package(path: "../../.")
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -22,6 +22,6 @@ let package = Package(
             dependencies: ["PlaceholderKit"]),
         .testTarget(
             name: "ImagesExample-macOSTests",
-            dependencies: ["ImagesExample-macOS", "PlaceholderKit"]),
+            dependencies: ["ImagesExample-macOS"]),
     ]
 )
