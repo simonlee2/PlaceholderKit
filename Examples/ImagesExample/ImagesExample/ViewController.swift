@@ -14,9 +14,9 @@ class ViewController: UIViewController {
     lazy var images: [UIImage] = {
         return [
             PlaceholderBuilder().coloredBackground(color: .red, size: CGSize(width: 100, height: 100)),
-            PlaceholderBuilder().coloredBackground(color: .blue, size: CGSize(width: 100, height: 100)),
-            PlaceholderBuilder().coloredBackground(color: .green, size: CGSize(width: 100, height: 100)),
-            PlaceholderBuilder().coloredBackground(color: .yellow, size: CGSize(width: 100, height: 100)),
+            PlaceholderBuilder().coloredBackground(color: .blue, size: CGSize(width: 200, height: 100)),
+            PlaceholderBuilder().coloredBackground(color: .green, size: CGSize(width: 100, height: 200)),
+            PlaceholderBuilder().coloredBackground(color: .yellow, size: CGSize(width: 320, height: 480)),
             ].compactMap({$0})
     }()
 
