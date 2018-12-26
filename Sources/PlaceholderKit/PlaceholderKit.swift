@@ -8,24 +8,28 @@
 
 #if os(OSX)
 import AppKit
-typealias Color = NSColor
-typealias Image = NSImage
+public typealias Color = NSColor
+public typealias Image = NSImage
 #else
 import UIKit
-typealias Color = UIColor
-typealias Image = UIImage
+public typealias Color = UIColor
+public typealias Image = UIImage
 #endif
 
 public struct PlaceholderFactory {
     let settings: PlaceholderSettings
 
-    func createPlaceholder() -> Image? {
+    public func createPlaceholder() -> Image? {
         switch settings.background {
         case .solidColor(let color):
             return Image.createPlaceholder(withColor: color, size: settings.size)
         case .image:
             return nil
         }
+    }
+
+    public init(settings: PlaceholderSettings) {
+        self.settings = settings
     }
 }
 
@@ -34,9 +38,19 @@ public struct PlaceholderSettings {
     let background: PlaceholderBackground
     let showDimensionAsText: Bool
     let convertDimensionToAspectRatio: Bool
+
+    public init(size: CGSize,
+                background: PlaceholderBackground,
+                showDimensionAsText: Bool,
+                convertDimensionToAspectRatio: Bool) {
+        self.size = size
+        self.background = background
+        self.showDimensionAsText = showDimensionAsText
+        self.convertDimensionToAspectRatio = convertDimensionToAspectRatio
+    }
 }
 
-enum PlaceholderBackground {
+public enum PlaceholderBackground {
     case solidColor(Color)
     case image(Image)
 }

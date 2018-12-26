@@ -20,10 +20,10 @@ before_install:
 script:
     - set -o pipefail
     - 'if [ $POD_LINT == "YES" ]; then pod lib lint; fi'
-    # - >-
-    #     if [ $BUILD_EXAMPLE == "YES" ]; then xcodebuild clean build -project
-    #     Examples/TableViewExample/TableViewExample.xcodeproj -scheme
-    #     TableViewExample -sdk "$SDK" -destination "$DESTINATION"; fi
+    - >-
+        if [ $BUILD_EXAMPLE == "YES" ]; then xcodebuild clean build -project
+        Examples/ImagesExample/ImagesExample.xcodeproj -scheme
+        TableViewExample -sdk "$SDK" -destination "$DESTINATION"; fi
     - >-
         if [ $RUN_TESTS == "YES" ]; then xcodebuild clean test -project
         "$PROJECT" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION"
