@@ -14,6 +14,6 @@ Pod::Spec.new do |s|
     s.source_files = "Sources/PlaceholderKit/"
     s.exclude_files = "Sources/**/*.plist"
   
-    s.platforms = { :ios => "8.0", :osx => "10.11"}
+    s.platforms = { :ios => "10.0", :osx => "10.11"}
     s.swift_version = "4.2"
   end
