@@ -6,7 +6,7 @@ env:
         - LANG=en_US.UTF-8
         - PROJECT="PlaceholderKit.xcodeproj"
         - SCHEME="PlaceholderKit"
-        - IOS_SDK=iphonesimulator12.0
+        - IOS_SDK=iphonesimulator12.1
         - OSX_SDK=macosx10.14
     matrix:
         - >-
