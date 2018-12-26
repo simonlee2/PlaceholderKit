@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
     }
   
     s.source = { :git => "https://github.com/simonlee2/PlaceholderKit.git", :tag => s.version.to_s }
-    s.source_files = "Sources"
+    s.source_files = "Sources/PlaceholderKit/"
     s.exclude_files = "Sources/**/*.plist"
   
     s.platforms = { :ios => "8.0", :osx => "10.11"}
