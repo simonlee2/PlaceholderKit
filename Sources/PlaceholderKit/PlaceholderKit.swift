@@ -10,10 +10,12 @@
 import AppKit
 public typealias Color = NSColor
 public typealias Image = NSImage
+public typealias Font = NSFont
 #else
 import UIKit
 public typealias Color = UIColor
 public typealias Image = UIImage
+public typealias Font = UIFont
 #endif
 
 public struct Placeholder {
@@ -35,24 +37,34 @@ public struct PlaceholderBuilder {
         return nil
     }
 
-    public init() {}
-}
+    // not platform specific
+    public func displayedTextAttributes() -> [NSAttributedString.Key: NSObject] {
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .center
 
-public struct PlaceholderSettings {
-    let size: CGSize
-    let background: BackgroundStyle
-    let showDimensionAsText: Bool
-    let convertDimensionToAspectRatio: Bool
+        let attrs = [NSAttributedString.Key.font: Font(name: "HelveticaNeue", size: 10)!, NSAttributedString.Key.paragraphStyle: paragraphStyle]
 
-    public init(size: CGSize,
-                background: BackgroundStyle,
-                showDimensionAsText: Bool,
-                convertDimensionToAspectRatio: Bool) {
-        self.size = size
-        self.background = background
-        self.showDimensionAsText = showDimensionAsText
-        self.convertDimensionToAspectRatio = convertDimensionToAspectRatio
+        return attrs
     }
+
+    public func displayedText(size: CGSize) -> String {
+        let string = "\(Int(size.width))x\(Int(size.height))"
+        return string
+    }
+
+    public func textRect(imageSize: CGSize) -> CGRect {
+        let attributedString = NSAttributedString(string: displayedText(size: imageSize),
+                                                  attributes: displayedTextAttributes())
+        let textSize = attributedString.size()
+        let rect =  CGRect(x: 0,
+                           y: (imageSize.height - textSize.height) / 2,
+                           width: imageSize.width,
+                           height: textSize.height)
+        return rect
+
+    }
+
+    public init() {}
 }
 
 public enum BackgroundStyle {

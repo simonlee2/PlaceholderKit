@@ -18,17 +18,13 @@ extension UIImage {
             color.setFill()
             context.fill(rect)
 
-            // text style
-            let paragraphStyle = NSMutableParagraphStyle()
-            paragraphStyle.alignment = .center
-
-            let attrs = [NSAttributedString.Key.font: UIFont(name: "HelveticaNeue", size: 10)!, NSAttributedString.Key.paragraphStyle: paragraphStyle]
-
-            // display string
-            let string = "\(Int(size.width))x\(Int(size.height))"
+            // text
+            let text = PlaceholderBuilder().displayedText(size: size)
+            let attrs = PlaceholderBuilder().displayedTextAttributes()
+            let textRect = PlaceholderBuilder().textRect(imageSize: size)
 
             // draw text
-            string.draw(with: rect, options: .usesLineFragmentOrigin, attributes: attrs, context: nil)
+            text.draw(with: textRect, options: .usesLineFragmentOrigin, attributes: attrs, context: nil)
         }
 
         return image
