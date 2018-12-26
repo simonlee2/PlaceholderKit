@@ -59,3 +59,21 @@ public enum BackgroundStyle {
     case solidColor(Color)
     case image(Image)
 }
+
+public enum BackgroundStrategy {
+    case randomColor
+    case randomImage
+}
+
+public enum TextLocationStrategy {
+    case center
+    case topRight
+    case topLeft
+    case bottomRight
+    case bottomLeft
+}
+
+public enum TextSizeFormatStrategy {
+    case points
+    case aspectRatio
+}
