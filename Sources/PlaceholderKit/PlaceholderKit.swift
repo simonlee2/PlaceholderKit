@@ -35,12 +35,12 @@ public struct PlaceholderFactory {
 
 public struct PlaceholderSettings {
     let size: CGSize
-    let background: PlaceholderBackground
+    let background: BackgroundStyle
     let showDimensionAsText: Bool
     let convertDimensionToAspectRatio: Bool
 
     public init(size: CGSize,
-                background: PlaceholderBackground,
+                background: BackgroundStyle,
                 showDimensionAsText: Bool,
                 convertDimensionToAspectRatio: Bool) {
         self.size = size
@@ -50,7 +50,7 @@ public struct PlaceholderSettings {
     }
 }
 
-public enum PlaceholderBackground {
+public enum BackgroundStyle {
     case solidColor(Color)
     case image(Image)
 }
