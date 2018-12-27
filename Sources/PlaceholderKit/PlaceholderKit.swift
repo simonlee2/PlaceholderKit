@@ -21,11 +21,11 @@ public typealias Font = UIFont
 public struct PlaceholderKit {
     public static let defaultPalette = ColorPalette(name: "defaultPalette",
                                              colors: [
-                                                UIColor("ff5a5a"),
-                                                UIColor("ff7b5a"),
-                                                UIColor("ffb65a"),
-                                                UIColor("ced07d"),
-                                                UIColor("7dd0b6")
+                                                Color("ff5a5a"),
+                                                Color("ff7b5a"),
+                                                Color("ffb65a"),
+                                                Color("ced07d"),
+                                                Color("7dd0b6")
         ])
 
     public static let defaultSizes = [
@@ -42,7 +42,7 @@ public struct PlaceholderKit {
                                  sizes: defaultSizes)
     }
 
-    public static var defaultPlaceholders: [UIImage] {
+    public static var defaultPlaceholders: [Image] {
         return defaultPreset.placeholders.compactMap({$0.render()})
     }
 }

@@ -13,7 +13,7 @@ class PlaceholderTests: XCTestCase {
     func testSolidColor() {
         // Given a valid setting
         let outputSize = CGSize(width: 1600, height: 900)
-        let image = PlaceholderBuilder().coloredBackground(color: .red, size: outputSize)
+        let image = Placeholder(size: outputSize, backgroundStyle: .solidColor(.red)).render()
 
         // output should not be nil
         XCTAssertNotNil(image)
