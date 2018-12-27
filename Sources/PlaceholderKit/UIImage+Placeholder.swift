@@ -20,9 +20,13 @@ extension Placeholder {
             case .solidColor(let color):
                 color.setFill()
                 context.fill(rect)
-            default:
-                break
+            case .image(let image):
+                image.draw(in: rect)
             }
+
+            // draw text background
+            UIColor.white.setFill()
+            context.fill(textRect.insetBy(dx: -10, dy: 0))
 
             // draw text
             displayedText.draw(with: textRect,

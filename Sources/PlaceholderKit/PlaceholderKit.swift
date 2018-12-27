@@ -32,7 +32,10 @@ public struct Placeholder {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = .center
 
-        let attrs = [NSAttributedString.Key.font: Font(name: "HelveticaNeue", size: 20)!, NSAttributedString.Key.paragraphStyle: paragraphStyle]
+        let attrs = [
+            NSAttributedString.Key.font: Font(name: "HelveticaNeue", size: 20)!,
+            NSAttributedString.Key.paragraphStyle: paragraphStyle
+        ]
 
         return attrs
     }
@@ -45,10 +48,10 @@ public struct Placeholder {
         let attributedString = NSAttributedString(string: displayedText,
                                                   attributes: displayedTextAttributes)
         let textSize = attributedString.size()
-        let rect =  CGRect(x: 0,
+        let rect =  CGRect(x: (size.width - textSize.width) / 2,
                            y: (size.height - textSize.height) / 2,
-                           width: size.width,
-                           height: size.height)
+                           width: textSize.width,
+                           height: textSize.height)
         return rect
     }
 

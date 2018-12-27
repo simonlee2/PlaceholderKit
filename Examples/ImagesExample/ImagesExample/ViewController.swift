@@ -11,13 +11,16 @@ import PlaceholderKit
 
 class ViewController: UIViewController {
     var sampleImagesCollectionViewController: SampleImagesCollectionViewController?
+    let placeholders: [Placeholder] = [
+        Placeholder(size: CGSize(width: 100, height: 100), backgroundStyle: .solidColor(.red)),
+        Placeholder(size: CGSize(width: 200, height: 100), backgroundStyle: .solidColor(.blue)),
+        Placeholder(size: CGSize(width: 100, height: 200), backgroundStyle: .solidColor(.green)),
+        Placeholder(size: CGSize(width: 320, height: 480), backgroundStyle: .solidColor(.yellow)),
+        Placeholder(size: CGSize(width: 320, height: 480), backgroundStyle: .image(UIImage(named: "background")!))
+    ]
+
     lazy var images: [UIImage] = {
-        return [
-                Placeholder(size: CGSize(width: 100, height: 100), backgroundStyle: .solidColor(.red)),
-                Placeholder(size: CGSize(width: 200, height: 100), backgroundStyle: .solidColor(.blue)),
-                Placeholder(size: CGSize(width: 100, height: 200), backgroundStyle: .solidColor(.green)),
-                Placeholder(size: CGSize(width: 320, height: 480), backgroundStyle: .solidColor(.yellow)),
-            ].compactMap({$0.render()})
+        return placeholders.compactMap({$0.render()})
     }()
 
     override func viewDidLoad() {
