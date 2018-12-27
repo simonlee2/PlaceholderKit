@@ -26,45 +26,35 @@ public struct Placeholder {
         self.size = size
         self.backgroundStyle = backgroundStyle
     }
-}
-
-public struct PlaceholderBuilder {
-    public func coloredBackground(color: Color, size: CGSize) -> Image? {
-        return Image.image(withColor: color, size: size)
-    }
-
-    public func imageBackground(image: Image, size: CGSize, tiled: Bool = false) -> Image? {
-        return nil
-    }
 
     // not platform specific
-    public func displayedTextAttributes() -> [NSAttributedString.Key: NSObject] {
+    public var displayedTextAttributes: [NSAttributedString.Key: NSObject] {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = .center
 
-        let attrs = [NSAttributedString.Key.font: Font(name: "HelveticaNeue", size: 10)!, NSAttributedString.Key.paragraphStyle: paragraphStyle]
+        let attrs = [NSAttributedString.Key.font: Font(name: "HelveticaNeue", size: 20)!, NSAttributedString.Key.paragraphStyle: paragraphStyle]
 
         return attrs
     }
 
-    public func displayedText(size: CGSize) -> String {
-        let string = "\(Int(size.width))x\(Int(size.height))"
-        return string
+    public var displayedText: String {
+        return "\(Int(size.width))x\(Int(size.height))"
     }
 
-    public func textRect(imageSize: CGSize) -> CGRect {
-        let attributedString = NSAttributedString(string: displayedText(size: imageSize),
-                                                  attributes: displayedTextAttributes())
+    public var textRect: CGRect {
+        let attributedString = NSAttributedString(string: displayedText,
+                                                  attributes: displayedTextAttributes)
         let textSize = attributedString.size()
         let rect =  CGRect(x: 0,
-                           y: (imageSize.height - textSize.height) / 2,
-                           width: imageSize.width,
-                           height: textSize.height)
+                           y: (size.height - textSize.height) / 2,
+                           width: size.width,
+                           height: size.height)
         return rect
-
     }
 
-    public init() {}
+    public func render() -> Image? {
+        return coloredBackground()
+    }
 }
 
 public enum BackgroundStyle {

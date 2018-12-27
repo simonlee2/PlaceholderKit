@@ -9,27 +9,30 @@
 #if canImport(UIKit)
 import UIKit
 
-extension UIImage {
-    static func image(withColor color: UIColor, size: CGSize) -> UIImage? {
+extension Placeholder {
+     public func coloredBackground() -> Image? {
         let renderer = UIGraphicsImageRenderer(size: size)
         let image = renderer.image { context in
             let rect = CGRect(origin: .zero, size: size)
-            // background
-            color.setFill()
-            context.fill(rect)
 
-            // text
-            let text = PlaceholderBuilder().displayedText(size: size)
-            let attrs = PlaceholderBuilder().displayedTextAttributes()
-            let textRect = PlaceholderBuilder().textRect(imageSize: size)
+            // background
+            switch backgroundStyle {
+            case .solidColor(let color):
+                color.setFill()
+                context.fill(rect)
+            default:
+                break
+            }
 
             // draw text
-            text.draw(with: textRect, options: .usesLineFragmentOrigin, attributes: attrs, context: nil)
+            displayedText.draw(with: textRect,
+                               options: .usesLineFragmentOrigin,
+                               attributes: displayedTextAttributes,
+                               context: nil)
         }
 
         return image
     }
-
 }
 
 #endif

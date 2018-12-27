@@ -8,15 +8,11 @@ import PlaceholderKit
 import Cocoa
 
 let images = [
-    PlaceholderBuilder().coloredBackground(color: .red,
-                                           size: CGSize(width: 100, height: 100)),
-    PlaceholderBuilder().coloredBackground(color: .blue,
-                                           size: CGSize(width: 100, height: 200)),
-    PlaceholderBuilder().coloredBackground(color: .green,
-                                           size: CGSize(width: 200, height: 100)),
-    PlaceholderBuilder().coloredBackground(color: .yellow,
-                                           size: CGSize(width: 320, height: 480))
-].compactMap({$0})
+    Placeholder(size: CGSize(width: 100, height: 100), backgroundStyle: .solidColor(.red)),
+    Placeholder(size: CGSize(width: 200, height: 100), backgroundStyle: .solidColor(.blue)),
+    Placeholder(size: CGSize(width: 100, height: 200), backgroundStyle: .solidColor(.green)),
+    Placeholder(size: CGSize(width: 320, height: 480), backgroundStyle: .solidColor(.yellow)),
+].compactMap({$0.render()})
 
 let desktopURL = FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask).first!
 
