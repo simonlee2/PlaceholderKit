@@ -16,11 +16,18 @@ class ViewController: UIViewController {
     let images: [UIImage] = PlaceholderKit.defaultPlaceholders
     let photosLibary = PhotosLibrary()
 
+    // Views
+    let containerView = UIView()
+    let saveToPhotosButton: UIButton = UIButton(type: .system)
+    let removeFromPhotosButton: UIButton = UIButton(type: .system)
+
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Placeholders"
         view.backgroundColor = UIColor(red: 0.3, green: 0.3, blue: 0.3, alpha: 1.0)
+        setupButtonContainerView()
         setupCollectionViewController()
+        setupButtons()
     }
 
     func setupCollectionViewController() {
@@ -34,22 +41,66 @@ class ViewController: UIViewController {
         NSLayoutConstraint.activate([
             collectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: containerView.topAnchor),
             collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor)
         ])
     }
 
-    func insertImagesIntoPhotos(completionHandler: ((Bool, Error?) -> Void)? = nil) {
-        photosLibary.performChanges({ library in
-            library.createAlbum()
-            try? library.addImages(self.images)
-        }, completionHandler: completionHandler)
+    func setupButtonContainerView() {
+        containerView.backgroundColor = UIColor("#fafafa")
+        containerView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(containerView)
+
+        NSLayoutConstraint.activate([
+            containerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            containerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            containerView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            containerView.heightAnchor.constraint(equalToConstant: 140)
+        ])
     }
 
-    func removeAlbum(completionHandler: ((Bool, Error?) -> Void)? = nil) {
+    func setupButtons() {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.alignment = .center
+        stackView.distribution = .fillEqually
+        containerView.addSubview(stackView)
+        stackView.addArrangedSubview(saveToPhotosButton)
+        stackView.addArrangedSubview(removeFromPhotosButton)
+
+        NSLayoutConstraint.activate([
+            stackView.topAnchor.constraint(equalTo: containerView.safeAreaLayoutGuide.topAnchor),
+            stackView.bottomAnchor.constraint(equalTo: containerView.safeAreaLayoutGuide.bottomAnchor),
+            stackView.leadingAnchor.constraint(equalTo: containerView.safeAreaLayoutGuide.leadingAnchor),
+            stackView.trailingAnchor.constraint(equalTo: containerView.safeAreaLayoutGuide.trailingAnchor),
+        ])
+
+        saveToPhotosButton.setTitle("Save to Photos", for: .normal)
+        removeFromPhotosButton.setTitle("Remove from Photos", for: .normal)
+        
+        saveToPhotosButton.addTarget(self, action: #selector(insertImagesIntoPhotos),
+                                     for: .touchUpInside)
+        removeFromPhotosButton.addTarget(self, action: #selector(removeAlbum),
+                                         for: .touchUpInside)
+    }
+
+    @objc func insertImagesIntoPhotos() {
+        photosLibary.performChanges({ library in
+            library.createAlbum()
+        }, completionHandler: { success, error in
+            if success {
+                self.photosLibary.performChanges({ library in
+                    try? library.addImages(self.images)
+                })
+            }
+        })
+    }
+
+    @objc func removeAlbum() {
         photosLibary.performChanges({ library in
             library.removeAlbum()
-        }, completionHandler: completionHandler)
+        })
     }
 }
 
