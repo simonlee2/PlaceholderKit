@@ -8,16 +8,19 @@
 
 import UIKit
 import PlaceholderKit
+import Photos
 
 class ViewController: UIViewController {
     var sampleImagesCollectionViewController: SampleImagesCollectionViewController?
 
     let images: [UIImage] = PlaceholderKit.defaultPlaceholders
+    let photosLibary = PhotosLibrary()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 0.3, green: 0.3, blue: 0.3, alpha: 1.0)
         setupCollectionViewController()
+
     }
 
     func setupCollectionViewController() {
@@ -29,11 +32,24 @@ class ViewController: UIViewController {
         sampleImagesCollectionViewController = controller
 
         NSLayoutConstraint.activate([
-            collectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 30),
-            collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -30),
+            collectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -30),
             collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30)
         ])
+    }
+
+    func insertImagesIntoPhotos(completionHandler: ((Bool, Error?) -> Void)? = nil) {
+        photosLibary.performChanges({ library in
+            library.createAlbum()
+            try? library.addImages(self.images)
+        }, completionHandler: completionHandler)
+    }
+
+    func removeAlbum(completionHandler: ((Bool, Error?) -> Void)? = nil) {
+        photosLibary.performChanges({ library in
+            library.removeAlbum()
+        }, completionHandler: completionHandler)
     }
 }
 
