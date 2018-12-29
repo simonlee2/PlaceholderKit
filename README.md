@@ -10,12 +10,6 @@
 
 ## Why do I need it?
 
-There's a lot more to calculating diffs than performing table view animations easily!
-
-Wherever you have code that propagates `added`/`removed`/`moved` callbacks from your model to your user interface, you should consider using a library that can calculate differences. Animating small batches of changes is usually going to be faster and provide a more responsive experience than reloading all of your data.
-
-Calculating and acting on differences should also aid you in making a clear separation between data and user interface, and hopefully provide a more declarative approach: your model performs state transition, then your UI code performs appropriate actions based on the calculated differences to that state.
-
 ## How to use
 
 ### Placeholder Images
