@@ -1,6 +1,6 @@
 # PlaceholderKit
 
-[![Build Status](https://travis-ci.com/simonlee2/PlaceholderKit.svg?branch=master)](https://travis-ci.com/simonlee2/PlaceholderKit) [![codecov](https://codecov.io/gh/simonlee2/PlaceholderKit/branch/master/graph/badge.svg)](https://codecov.io/gh/simonlee2/PlaceholderKit)
+[![Build Status](https://travis-ci.com/simonlee2/PlaceholderKit.svg?branch=master)](https://travis-ci.com/simonlee2/PlaceholderKit) [![codecov](https://codecov.io/gh/simonlee2/PlaceholderKit/branch/master/graph/badge.svg)](https://codecov.io/gh/simonlee2/PlaceholderKit) ![pod version](https://img.shields.io/cocoapods/v/PlaceholderKit.svg) ![git tag](https://img.shields.io/github/tag/simonlee2/PlaceholderKit.svg)
 
 
 ## Features
