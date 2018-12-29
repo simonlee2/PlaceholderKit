@@ -8,7 +8,6 @@
 
 import UIKit
 import PlaceholderKit
-import Photos
 
 class ViewController: UIViewController {
     var sampleImagesCollectionViewController: SampleImagesCollectionViewController?

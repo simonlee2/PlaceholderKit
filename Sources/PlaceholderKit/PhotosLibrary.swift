@@ -6,24 +6,27 @@
 //  Copyright © 2018 Shao Ping Lee. All rights reserved.
 //
 
+#if os(iOS)
 import Foundation
 import Photos
 
-class PhotosLibrary {
+public class PhotosLibrary {
     enum Error: Swift.Error {
         case AlbumDNE
     }
 
-    static let albumName = "PlaceholderKit"
+    public static let albumName = "PlaceholderKit"
 
-    func addImages(_ images: [UIImage]) throws {
+    public init() {}
+
+    public func addImages(_ images: [Image]) throws {
         for image in images {
             try addImage(image)
         }
     }
 
     // Add image to thelibrary
-    func addImage(_ image: UIImage,
+    public func addImage(_ image: Image,
                   toAlbumNamed title: String = albumName) throws {
         guard let album = fetchAlbum(title: title).firstObject else {
             throw Error.AlbumDNE
@@ -36,7 +39,7 @@ class PhotosLibrary {
         albumChangeRequest?.addAssets(enumeration)
     }
 
-    func fetchAlbum(title: String) -> PHFetchResult<PHAssetCollection> {
+    public func fetchAlbum(title: String) -> PHFetchResult<PHAssetCollection> {
         // Fetch albums with title
         let options = PHFetchOptions()
         options.predicate = NSPredicate(format: "title = %@", title)
@@ -44,7 +47,7 @@ class PhotosLibrary {
         return album
     }
 
-    func performChanges(_ changeBlock: @escaping (PhotosLibrary) -> Void,
+    public func performChanges(_ changeBlock: @escaping (PhotosLibrary) -> Void,
                         completionHandler: ((Bool, Swift.Error?) -> Void)? = nil) {
         ensurePhotoLibaryAuthorized { (library) in
             PHPhotoLibrary.shared().performChanges({
@@ -65,7 +68,7 @@ class PhotosLibrary {
     }
 
     // Create an album for placeholders
-    func createAlbum(title: String = albumName) {
+    public func createAlbum(title: String = albumName) {
         // Make sure album doesn't exist already
         let album = fetchAlbum(title: title)
         guard album.count == 0 else {
@@ -77,7 +80,7 @@ class PhotosLibrary {
     }
 
     // Remove the album the has the placeholders
-    func removeAlbum(title: String = albumName) {
+    public func removeAlbum(title: String = albumName) {
 
         let album = fetchAlbum(title: title)
 
@@ -89,3 +92,4 @@ class PhotosLibrary {
         }
     }
 }
+#endif

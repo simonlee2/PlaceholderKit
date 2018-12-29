@@ -14,8 +14,9 @@
 		F444B69221C104900042E6F2 /* Deployment-Targets.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = F444B68F21C104900042E6F2 /* Deployment-Targets.xcconfig */; };
 		F444B69B21C10B3C0042E6F2 /* PlaceholderKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F444B69A21C10B3C0042E6F2 /* PlaceholderKit.swift */; };
 		F444B69D21C115C00042E6F2 /* UIImage+Placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F444B69C21C115C00042E6F2 /* UIImage+Placeholder.swift */; };
-		F444B69F21C115C60042E6F2 /* NSImage+Placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F444B69E21C115C60042E6F2 /* NSImage+Placeholder.swift */; };
 		F444B6A121C15FF90042E6F2 /* PlaceholderFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F444B6A021C15FF90042E6F2 /* PlaceholderFactoryTests.swift */; };
+		F4A9D56A21D73F5700A6E2DE /* NSImage+Placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A9D56821D73F5700A6E2DE /* NSImage+Placeholder.swift */; };
+		F4A9D56B21D73F5700A6E2DE /* PhotosLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A9D56921D73F5700A6E2DE /* PhotosLibrary.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +40,9 @@
 		F444B68F21C104900042E6F2 /* Deployment-Targets.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Deployment-Targets.xcconfig"; sourceTree = "<group>"; };
 		F444B69A21C10B3C0042E6F2 /* PlaceholderKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlaceholderKit.swift; path = PlaceholderKit/PlaceholderKit.swift; sourceTree = "<group>"; };
 		F444B69C21C115C00042E6F2 /* UIImage+Placeholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIImage+Placeholder.swift"; path = "PlaceholderKit/UIImage+Placeholder.swift"; sourceTree = "<group>"; };
-		F444B69E21C115C60042E6F2 /* NSImage+Placeholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "NSImage+Placeholder.swift"; path = "PlaceholderKit/NSImage+Placeholder.swift"; sourceTree = "<group>"; };
 		F444B6A021C15FF90042E6F2 /* PlaceholderFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlaceholderFactoryTests.swift; path = PlaceholderKitTests/PlaceholderFactoryTests.swift; sourceTree = "<group>"; };
+		F4A9D56821D73F5700A6E2DE /* NSImage+Placeholder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSImage+Placeholder.swift"; path = "PlaceholderKit/NSImage+Placeholder.swift"; sourceTree = "<group>"; };
+		F4A9D56921D73F5700A6E2DE /* PhotosLibrary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotosLibrary.swift; path = PlaceholderKit/PhotosLibrary.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,9 +107,10 @@
 		F444B69321C105EB0042E6F2 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				F4A9D56821D73F5700A6E2DE /* NSImage+Placeholder.swift */,
+				F4A9D56921D73F5700A6E2DE /* PhotosLibrary.swift */,
 				F444B69A21C10B3C0042E6F2 /* PlaceholderKit.swift */,
 				F444B69C21C115C00042E6F2 /* UIImage+Placeholder.swift */,
-				F444B69E21C115C60042E6F2 /* NSImage+Placeholder.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -233,9 +236,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4A9D56B21D73F5700A6E2DE /* PhotosLibrary.swift in Sources */,
 				F444B69B21C10B3C0042E6F2 /* PlaceholderKit.swift in Sources */,
 				F444B69D21C115C00042E6F2 /* UIImage+Placeholder.swift in Sources */,
-				F444B69F21C115C60042E6F2 /* NSImage+Placeholder.swift in Sources */,
+				F4A9D56A21D73F5700A6E2DE /* NSImage+Placeholder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

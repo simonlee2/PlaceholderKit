@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F4A9D56421D5FE6300A6E2DE /* PhotosLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A9D56321D5FE6300A6E2DE /* PhotosLibrary.swift */; };
 		F4EC51C421D33B6900DED569 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC51C321D33B6900DED569 /* AppDelegate.swift */; };
 		F4EC51C621D33B6900DED569 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC51C521D33B6900DED569 /* ViewController.swift */; };
 		F4EC51CB21D33B6B00DED569 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4EC51CA21D33B6B00DED569 /* Assets.xcassets */; };
@@ -62,7 +61,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		F4A9D56321D5FE6300A6E2DE /* PhotosLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosLibrary.swift; sourceTree = "<group>"; };
+		F4A9D56321D5FE6300A6E2DE /* PhotosLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PhotosLibrary.swift; path = ../../../Sources/PhotosLibrary.swift; sourceTree = "<group>"; };
 		F4EC51C021D33B6900DED569 /* ImagesExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImagesExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4EC51C321D33B6900DED569 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4EC51C521D33B6900DED569 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -277,7 +276,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4EC51C621D33B6900DED569 /* ViewController.swift in Sources */,
-				F4A9D56421D5FE6300A6E2DE /* PhotosLibrary.swift in Sources */,
 				F4EC51C421D33B6900DED569 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
