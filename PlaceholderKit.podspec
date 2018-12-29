@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name         = "PlaceholderKit"
-    s.version      = "0.0.4"
+    s.version      = "0.0.7"
     s.summary      = "Create placeholder images. In Swift."
     s.homepage     = "https://github.com/simonlee2/PlaceholderKit"
     s.description  = "PlaceholderKit generates images that you can use for testing during development."
