@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F444B66F21C104460042E6F2"
-               BuildableName = "PlaceholderKit.framework"
-               BlueprintName = "PlaceholderKit"
-               ReferencedContainer = "container:PlaceholderKit.xcodeproj">
+               BlueprintIdentifier = "F4EC51BF21D33B6900DED569"
+               BuildableName = "ImagesExample.app"
+               BlueprintName = "ImagesExample"
+               ReferencedContainer = "container:ImagesExample.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,20 +33,20 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F444B67821C104460042E6F2"
-               BuildableName = "PlaceholderKitTests.xctest"
-               BlueprintName = "PlaceholderKitTests"
-               ReferencedContainer = "container:PlaceholderKit.xcodeproj">
+               BlueprintIdentifier = "F4EC51D321D33B6B00DED569"
+               BuildableName = "ImagesExampleTests.xctest"
+               BlueprintName = "ImagesExampleTests"
+               ReferencedContainer = "container:ImagesExample.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F444B66F21C104460042E6F2"
-            BuildableName = "PlaceholderKit.framework"
-            BlueprintName = "PlaceholderKit"
-            ReferencedContainer = "container:PlaceholderKit.xcodeproj">
+            BlueprintIdentifier = "F4EC51BF21D33B6900DED569"
+            BuildableName = "ImagesExample.app"
+            BlueprintName = "ImagesExample"
+            ReferencedContainer = "container:ImagesExample.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -62,15 +62,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F444B66F21C104460042E6F2"
-            BuildableName = "PlaceholderKit.framework"
-            BlueprintName = "PlaceholderKit"
-            ReferencedContainer = "container:PlaceholderKit.xcodeproj">
+            BlueprintIdentifier = "F4EC51BF21D33B6900DED569"
+            BuildableName = "ImagesExample.app"
+            BlueprintName = "ImagesExample"
+            ReferencedContainer = "container:ImagesExample.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -80,15 +81,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F444B66F21C104460042E6F2"
-            BuildableName = "PlaceholderKit.framework"
-            BlueprintName = "PlaceholderKit"
-            ReferencedContainer = "container:PlaceholderKit.xcodeproj">
+            BlueprintIdentifier = "F4EC51BF21D33B6900DED569"
+            BuildableName = "ImagesExample.app"
+            BlueprintName = "ImagesExample"
+            ReferencedContainer = "container:ImagesExample.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
